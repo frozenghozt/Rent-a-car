@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f1f6;
+  font-family: CaustenReg;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@font-face {
+  font-family: CaustenReg;
+  src: url("./assets/Causten\ Regular.ttf");
+}
+
+@font-face {
+  font-family: CaustenBold;
+  src: url("./assets/Causten\ Semi\ Bold.ttf");
+}
+
+@font-face {
+  font-family: ElegantIcons;
+  src: url("./assets/ElegantIcons.ttf");
+}
+
+/* ::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+} */
