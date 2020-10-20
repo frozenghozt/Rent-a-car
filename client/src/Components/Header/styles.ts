@@ -33,7 +33,7 @@ export const NavBarContainer = styled.nav`
     padding: 0;
     > li {
       list-style: none;
-      margin-right: 25px;
+      margin-right: 40px;
       cursor: pointer;
       &:nth-last-child(1) {
         margin-right: 0;

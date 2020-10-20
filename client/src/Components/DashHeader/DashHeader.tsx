@@ -1,13 +1,33 @@
-import { Button } from "@material-ui/core";
 import React from "react";
-import { Container, Logo, Menu, Buttons } from "./styles";
+import {
+  Container,
+  Wrapper,
+  LogoContainer,
+  NavBarContainer,
+  IconContainer,
+  ButtonsContainer,
+} from "./styles";
+import MenuIcon from "@material-ui/icons/Menu";
 
 const DashHeader = () => {
   return (
     <Container>
-      <Logo>fudsf</Logo>
-      <Menu>dsdsds</Menu>
-      <Buttons>dsdsdsd</Buttons>
+      <Wrapper>
+        <LogoContainer>Logo</LogoContainer>
+        <NavBarContainer>
+          <ul>
+            <li>Find your car</li>
+            <li>How it works</li>
+            <li>Create account</li>
+          </ul>
+        </NavBarContainer>
+        <IconContainer>
+          <MenuIcon />
+        </IconContainer>
+        <ButtonsContainer>
+          <button>Sign in</button>
+        </ButtonsContainer>
+      </Wrapper>
     </Container>
   );
 };

@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const cors_1 = __importDefault(require("cors"));
 require("dotenv").config();
-const router_1 = __importDefault(require("./routes/router"));
+const router_1 = __importDefault(require("../routes/router"));
 const app = express_1.default();
 app.use(express_1.default.json());
 app.use(cors_1.default());
