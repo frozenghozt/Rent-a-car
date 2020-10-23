@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   padding-bottom: 100%;
   width: 100%;
-  padding: 5px;
+  padding: 10px 10px 5px 10px;
   color: #999;
 `;
 

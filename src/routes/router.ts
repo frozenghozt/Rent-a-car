@@ -4,7 +4,16 @@ import Car from "../models/carsModel";
 
 router.post("/cars", async (req, res) => {
   try {
-    const { brand, model, price, years, doors, fuel, image } = req.body;
+    const {
+      brand,
+      model,
+      price,
+      years,
+      doors,
+      fuel,
+      image,
+      showcase,
+    } = req.body;
     const newCar = new Car({
       brand,
       model,
@@ -13,6 +22,7 @@ router.post("/cars", async (req, res) => {
       doors,
       fuel,
       image,
+      showcase,
     });
     const savedCar = await newCar.save();
     res.json(savedCar);

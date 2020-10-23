@@ -12,6 +12,7 @@ const carScheama = new mongoose_1.default.Schema({
     doors: { type: Number, required: true },
     fuel: { type: String, required: true },
     image: { type: String, required: true },
+    showcase: { type: String, required: true },
 });
 const Car = mongoose_1.default.model("car", carScheama);
 exports.default = Car;

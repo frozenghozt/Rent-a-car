@@ -22,7 +22,7 @@ const DashHeader = () => {
           </ul>
         </NavBarContainer>
         <IconContainer>
-          <MenuIcon />
+          <MenuIcon style={{ cursor: "pointer" }} />
         </IconContainer>
         <ButtonsContainer>
           <button>Sign in</button>

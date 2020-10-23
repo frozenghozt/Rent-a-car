@@ -32,7 +32,7 @@ const ListItem = ({
     <Container>
       <Wrapper>
         <ImageContainer>
-          <img src={`${image}`} />
+          <img src={`${image}`} alt="foto" />
         </ImageContainer>
         <InfoContainer>
           <BrandModel>

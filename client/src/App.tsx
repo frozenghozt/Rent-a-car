@@ -25,7 +25,9 @@ const App = () => {
             <Categories />
             <Cities />
           </Route>
-          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
         </Switch>
       </AppWrapper>
     </MuiPickersUtilsProvider>

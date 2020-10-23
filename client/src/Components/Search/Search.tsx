@@ -38,11 +38,13 @@ const Search = () => {
     departure: new Date(),
     vehicle: "Any",
   });
+
   const optionsdiv = useRef(null);
   useOnClickOutside(optionsdiv, () => {
     setLocationIsOpen(false);
     setVehicleIsOpen(false);
   });
+
   return (
     <Container>
       <Where>

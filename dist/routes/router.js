@@ -17,7 +17,7 @@ const router = express_1.default.Router();
 const carsModel_1 = __importDefault(require("../models/carsModel"));
 router.post("/cars", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { brand, model, price, years, doors, fuel, image } = req.body;
+        const { brand, model, price, years, doors, fuel, image, showcase, } = req.body;
         const newCar = new carsModel_1.default({
             brand,
             model,
@@ -26,6 +26,7 @@ router.post("/cars", (req, res) => __awaiter(void 0, void 0, void 0, function* (
             doors,
             fuel,
             image,
+            showcase,
         });
         const savedCar = yield newCar.save();
         res.json(savedCar);
