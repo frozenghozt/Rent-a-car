@@ -3,7 +3,7 @@ import { MaterialUiPickersDate } from "@material-ui/pickers/typings/date";
 type stateShape = {
   cities: string[];
   brands: string[];
-  price: [string, string];
+  price: [number, number];
   date: [Date | MaterialUiPickersDate, Date | MaterialUiPickersDate];
   doors: string[];
   years: [string, string];
@@ -11,11 +11,29 @@ type stateShape = {
 };
 
 const initialState: stateShape = {
-  cities: [],
-  brands: [],
-  price: ["0", "2000"],
+  cities: [
+    "Lisboa",
+    "Porto",
+    "Algarve",
+    "Coimbra",
+    "Braga",
+    "Bragança",
+    "Setúbal",
+  ],
+  brands: [
+    "BMW",
+    "Mercedes",
+    "Toyota",
+    "Renault",
+    "Lamborghini",
+    "Porsche",
+    "Audi",
+    "Jaguar",
+    "Ford",
+  ],
+  price: [0, 2000],
   date: [new Date(), new Date()],
-  doors: [],
+  doors: ["2", "3", "4", "5"],
   years: ["1980", "2020"],
   fuel: ["Gasolina", "Gasoleo"],
 };
@@ -30,6 +48,11 @@ export const search = (state = initialState, action: any) => {
             ? state.cities.filter((each) => each !== action.payload)
             : [...state.cities, action.payload],
       };
+    case "CHANGE_CITY_HOME":
+      return {
+        ...state,
+        cities: [...action.payload],
+      };
     case "CHANGE_BRAND":
       return {
         ...state,
@@ -37,6 +60,11 @@ export const search = (state = initialState, action: any) => {
           state.brands.indexOf(action.payload) >= 0
             ? state.brands.filter((each) => each !== action.payload)
             : [...state.brands, action.payload],
+      };
+    case "CHANGE_BRAND_HOME":
+      return {
+        ...state,
+        brands: [...action.payload],
       };
     case "CHANGE_PRICE":
       return {

@@ -5,8 +5,18 @@ export const changeCity = (payload: string) => ({
   payload,
 });
 
+export const changeCityHome = (payload: string[]) => ({
+  type: "CHANGE_CITY_HOME",
+  payload,
+});
+
 export const changeBrand = (payload: string) => ({
   type: "CHANGE_BRAND",
+  payload,
+});
+
+export const changeBrandHome = (payload: string[]) => ({
+  type: "CHANGE_BRAND_HOME",
   payload,
 });
 

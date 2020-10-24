@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <Container>
       <Wrapper>
-        <LogoContainer>Logo</LogoContainer>
+        <LogoContainer>LuxCar</LogoContainer>
         <NavBarContainer>
           <ul>
             <li>Find your car</li>

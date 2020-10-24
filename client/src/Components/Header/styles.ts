@@ -18,6 +18,8 @@ export const LogoContainer = styled.div`
   display: flex;
   flex: 1;
   height: 100%;
+  font-size: 22px;
+  font-weight: 500;
   justify-content: flex-start;
   align-items: center;
 `;

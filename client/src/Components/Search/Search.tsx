@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Container,
   Where,
@@ -10,6 +10,13 @@ import {
   StyledLink,
 } from "./styles";
 import "./styles.css";
+import {
+  changeCityHome,
+  changeBrandHome,
+  changeDeparture,
+  changeArrival,
+} from "../../redux/actions/searchAction";
+import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { DatePicker } from "@material-ui/pickers";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
 import RoomOutlinedIcon from "@material-ui/icons/RoomOutlined";
@@ -22,23 +29,40 @@ const style = {
   border: 0,
 };
 
-type SearchShape = {
-  location: string;
-  arrival: Date | MaterialUiPickersDate;
-  departure: Date | MaterialUiPickersDate;
-  vehicle: string;
-};
-
 const Search = () => {
   const [locationIsOpen, setLocationIsOpen] = useState<boolean>(false);
   const [vehicleIsOpen, setVehicleIsOpen] = useState<boolean>(false);
-  const [searchData, setSearchData] = useState<SearchShape>({
-    location: "Lisboa",
-    arrival: new Date(),
-    departure: new Date(),
-    vehicle: "Any",
-  });
+  const dispatch = useDispatch();
+  const selector = useSelector((state: RootStateOrAny) => state.search);
 
+  useEffect(() => {
+    dispatch(
+      changeCityHome([
+        "Lisboa",
+        "Porto",
+        "Algarve",
+        "Coimbra",
+        "Braga",
+        "Bragança",
+        "Setúbal",
+      ])
+    );
+    dispatch(
+      changeBrandHome([
+        "BMW",
+        "Mercedes",
+        "Toyota",
+        "Renault",
+        "Lamborghini",
+        "Porsche",
+        "Audi",
+        "Jaguar",
+        "Ford",
+      ])
+    );
+  }, [dispatch]);
+
+  // Ref + clickoutside custom hook
   const optionsdiv = useRef(null);
   useOnClickOutside(optionsdiv, () => {
     setLocationIsOpen(false);
@@ -51,57 +75,46 @@ const Search = () => {
         <RoomOutlinedIcon style={{ color: "#999" }} />
         <div onClick={() => setLocationIsOpen(!locationIsOpen)}>
           <span>WHERE</span>
-          <span>{searchData.location}</span>
+          <span>{selector.cities.length === 7 ? "Any" : selector.cities}</span>
           {locationIsOpen && (
             <Options ref={optionsdiv}>
               <ul>
                 <li
                   onClick={() =>
-                    setSearchData({ ...searchData, location: "Lisboa" })
+                    dispatch(
+                      changeCityHome([
+                        "Lisboa",
+                        "Porto",
+                        "Algarve",
+                        "Coimbra",
+                        "Braga",
+                        "Bragança",
+                        "Setúbal",
+                      ])
+                    )
                   }
                 >
+                  Any
+                </li>
+                <li onClick={() => dispatch(changeCityHome(["Lisboa"]))}>
                   Lisboa
                 </li>
-                <li
-                  onClick={() =>
-                    setSearchData({ ...searchData, location: "Porto" })
-                  }
-                >
+                <li onClick={() => dispatch(changeCityHome(["Porto"]))}>
                   Porto
                 </li>
-                <li
-                  onClick={() =>
-                    setSearchData({ ...searchData, location: "Algarve" })
-                  }
-                >
+                <li onClick={() => dispatch(changeCityHome(["Algarve"]))}>
                   Algarve
                 </li>
-                <li
-                  onClick={() =>
-                    setSearchData({ ...searchData, location: "Coimbra" })
-                  }
-                >
+                <li onClick={() => dispatch(changeCityHome(["Coimbra"]))}>
                   Coimbra
                 </li>
-                <li
-                  onClick={() =>
-                    setSearchData({ ...searchData, location: "Braga" })
-                  }
-                >
+                <li onClick={() => dispatch(changeCityHome(["Braga"]))}>
                   Braga
                 </li>
-                <li
-                  onClick={() =>
-                    setSearchData({ ...searchData, location: "Bragança" })
-                  }
-                >
+                <li onClick={() => dispatch(changeCityHome(["Bragança"]))}>
                   Bragança
                 </li>
-                <li
-                  onClick={() =>
-                    setSearchData({ ...searchData, location: "Setúbal" })
-                  }
-                >
+                <li onClick={() => dispatch(changeCityHome(["Setúbal"]))}>
                   Setúbal
                 </li>
               </ul>
@@ -114,23 +127,23 @@ const Search = () => {
         <CalendarTodayOutlinedIcon style={{ color: "#999" }} fontSize="small" />
         <div>
           <div>
-            <span>ARRIVAL</span>
+            <span>DEPARTURE</span>
             <DatePicker
               style={style}
-              value={searchData.arrival}
+              value={selector.departure}
               onChange={(date: MaterialUiPickersDate) =>
-                setSearchData({ ...searchData, arrival: date })
+                dispatch(changeDeparture(date))
               }
               animateYearScrolling
             />
           </div>
           <div>
-            <span>DEPARTURE</span>
+            <span>ARRIVAL</span>
             <DatePicker
               style={style}
-              value={searchData.departure}
+              value={selector.arrival}
               onChange={(date: MaterialUiPickersDate) =>
-                setSearchData({ ...searchData, departure: date })
+                dispatch(changeArrival(date))
               }
               animateYearScrolling
             />
@@ -141,71 +154,52 @@ const Search = () => {
         <DriveEtaOutlinedIcon style={{ color: "#999" }} />
         <div onClick={() => setVehicleIsOpen(!vehicleIsOpen)}>
           <span>VEHICLE</span>
-          <span>{searchData.vehicle}</span>
+          <span>{selector.brands.length === 9 ? "Any" : selector.brands}</span>
           {vehicleIsOpen && (
             <Options ref={optionsdiv}>
               <ul>
                 <li
                   onClick={() =>
-                    setSearchData({ ...searchData, vehicle: "Any" })
+                    dispatch(
+                      changeBrandHome([
+                        "BMW",
+                        "Mercedes",
+                        "Toyota",
+                        "Renault",
+                        "Lamborghini",
+                        "Porsche",
+                        "Audi",
+                        "Jaguar",
+                        "Ford",
+                      ])
+                    )
                   }
                 >
                   Any
                 </li>
-                <li
-                  onClick={() =>
-                    setSearchData({ ...searchData, vehicle: "BMW" })
-                  }
-                >
-                  BMW
-                </li>
-                <li
-                  onClick={() =>
-                    setSearchData({ ...searchData, vehicle: "Mercedes" })
-                  }
-                >
+                <li onClick={() => dispatch(changeBrandHome(["BMW"]))}>BMW</li>
+                <li onClick={() => dispatch(changeBrandHome(["Mercedes"]))}>
                   Mercedes
                 </li>
-                <li
-                  onClick={() =>
-                    setSearchData({ ...searchData, vehicle: "Toyota" })
-                  }
-                >
+                <li onClick={() => dispatch(changeBrandHome(["Toyota"]))}>
                   Toyota
                 </li>
-                <li
-                  onClick={() =>
-                    setSearchData({ ...searchData, vehicle: "Renaut" })
-                  }
-                >
-                  Renaut
+                <li onClick={() => dispatch(changeBrandHome(["Renault"]))}>
+                  Renault
                 </li>
-                <li
-                  onClick={() =>
-                    setSearchData({ ...searchData, vehicle: "Lamborghini" })
-                  }
-                >
+                <li onClick={() => dispatch(changeBrandHome(["Lamborghini"]))}>
                   Lamborghini
                 </li>
-                <li
-                  onClick={() =>
-                    setSearchData({ ...searchData, vehicle: "Porsche" })
-                  }
-                >
+                <li onClick={() => dispatch(changeBrandHome(["Porsche"]))}>
                   Porsche
                 </li>
-                <li
-                  onClick={() =>
-                    setSearchData({ ...searchData, vehicle: "Audi" })
-                  }
-                >
+                <li onClick={() => dispatch(changeBrandHome(["Audi"]))}>
                   Audi
                 </li>
-                <li
-                  onClick={() =>
-                    setSearchData({ ...searchData, vehicle: "Jaguar" })
-                  }
-                >
+                <li onClick={() => dispatch(changeBrandHome(["Jaguar"]))}>
+                  Jaguar
+                </li>
+                <li onClick={() => dispatch(changeBrandHome(["Ford"]))}>
                   Jaguar
                 </li>
               </ul>

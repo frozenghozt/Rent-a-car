@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { DatePicker } from "@material-ui/pickers";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { MaterialUiPickersDate } from "@material-ui/pickers/typings/date";
@@ -234,7 +234,9 @@ const Sidebar = () => {
         <h3>Years</h3>
         <div>
           <input
-            type="text"
+            type="number"
+            min="1980"
+            max="2019"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               dispatch(changeYears({ years: e.target.value, index: 0 }))
             }
@@ -242,7 +244,9 @@ const Sidebar = () => {
           />
           -
           <input
-            type="text"
+            type="number"
+            min="1981"
+            max="2020"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               dispatch(changeYears({ years: e.target.value, index: 1 }))
             }
@@ -330,7 +334,10 @@ const Sidebar = () => {
         <h3>Price</h3>
         <div>
           <input
-            type="text"
+            type="number"
+            min="0"
+            max="1900"
+            step="50"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               dispatch(changePrice({ price: e.target.value, index: 0 }))
             }
@@ -338,7 +345,10 @@ const Sidebar = () => {
           />
           -
           <input
-            type="text"
+            type="number"
+            min="100"
+            max="2000"
+            step="50"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               dispatch(changePrice({ price: e.target.value, index: 1 }))
             }

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
@@ -26,6 +27,8 @@ export const LogoContainer = styled.div`
   display: flex;
   flex: 1;
   height: 100%;
+  font-size: 22px;
+  font-weight: 500;
   justify-content: flex-start;
   align-items: center;
 `;
@@ -84,5 +87,16 @@ export const ButtonsContainer = styled.div`
   }
   @media (min-width: 768px) {
     display: flex;
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #fff;
+  border: 0;
+  outline: none;
+  &:focus {
+    border: none;
+    outline: none;
   }
 `;

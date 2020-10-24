@@ -6,6 +6,7 @@ import {
   NavBarContainer,
   IconContainer,
   ButtonsContainer,
+  StyledLink,
 } from "./styles";
 import MenuIcon from "@material-ui/icons/Menu";
 
@@ -13,7 +14,9 @@ const DashHeader = () => {
   return (
     <Container>
       <Wrapper>
-        <LogoContainer>Logo</LogoContainer>
+        <LogoContainer>
+          <StyledLink to="/">LuxCar</StyledLink>
+        </LogoContainer>
         <NavBarContainer>
           <ul>
             <li>Find your car</li>
