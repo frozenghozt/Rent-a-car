@@ -41,9 +41,8 @@ export const ImageContainer = styled.div`
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-  height: 30%;
   padding: 10px 7px;
 `;
 

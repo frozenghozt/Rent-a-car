@@ -207,7 +207,7 @@ const Search = () => {
           )}
         </div>
       </Vehicle>
-      <StyledLink to="/dashboard">
+      <StyledLink to="/rent">
         <SearchButton>
           <SearchRoundedIcon />
         </SearchButton>

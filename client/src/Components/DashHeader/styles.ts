@@ -12,11 +12,12 @@ export const Wrapper = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
-  height: 75px;
+  height: 60px;
   color: #fff;
   padding: 0 20px;
   @media (min-width: 480px) {
     padding: 0 30px;
+    height: 75px;
   }
   @media (min-width: 1024px) {
     padding: 0 40px;

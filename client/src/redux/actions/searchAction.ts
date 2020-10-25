@@ -20,7 +20,7 @@ export const changeBrandHome = (payload: string[]) => ({
   payload,
 });
 
-export const changePrice = (payload: { price: string; index: number }) => ({
+export const changePrice = (payload: { price: number; index: number }) => ({
   type: "CHANGE_PRICE",
   payload,
 });
@@ -35,7 +35,7 @@ export const changeArrival = (payload: MaterialUiPickersDate) => ({
   payload,
 });
 
-export const changeYears = (payload: { years: string; index: number }) => ({
+export const changeYears = (payload: { years: number; index: number }) => ({
   type: "CHANGE_YEARS",
   payload,
 });

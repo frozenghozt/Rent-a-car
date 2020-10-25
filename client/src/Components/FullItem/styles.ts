@@ -13,7 +13,7 @@ export const Item = styled.div`
   flex-direction: column;
   flex: 2;
   height: calc(100% - 300px);
-  @media (min-width: 1280px) {
+  @media (min-width: 1024px) {
     flex-direction: row;
   }
 `;

@@ -6,7 +6,7 @@ type stateShape = {
   price: [number, number];
   date: [Date | MaterialUiPickersDate, Date | MaterialUiPickersDate];
   doors: string[];
-  years: [string, string];
+  years: [number, number];
   fuel: [string, string];
 };
 
@@ -34,7 +34,7 @@ const initialState: stateShape = {
   price: [0, 2000],
   date: [new Date(), new Date()],
   doors: ["2", "3", "4", "5"],
-  years: ["1980", "2020"],
+  years: [1980, 2020],
   fuel: ["Gasolina", "Gasoleo"],
 };
 

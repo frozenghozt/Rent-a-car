@@ -15,11 +15,13 @@ export const DashWrapper = styled.div`
 
 export const DashContent = styled.div`
   display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   width: 100%;
   height: 100%;
   padding: 20px;
   flex-wrap: wrap;
-  overflow-y: auto;
+  overflow-y: scroll;
   @media (min-width: 1024px) {
     width: calc(100% - 280px);
   }

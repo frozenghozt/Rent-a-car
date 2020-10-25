@@ -7,7 +7,7 @@ export const Container = styled.div`
   width: 280px;
   height: 100%;
   background-color: #f0f1f6;
-  padding: 20px 20px;
+  padding: 20px;
   @media (min-width: 1024px) {
     display: flex;
   }
@@ -53,13 +53,15 @@ export const Days = styled.div`
     display: flex;
     align-items: center;
     width: 100%;
-    > input {
-      background-color: #fff;
-      width: 30%;
-      padding: 5px 5px;
+    input {
+      font-size: 15px;
+      text-align: center;
+      padding: 6px 7px 5px 7px;
       margin: 0 5px;
-      border: 1px solid #999;
+      color: #000;
       border-radius: 4px;
+      border: 1px solid #bfbfbf;
+      background-color: #fff;
       &:focus {
         outline: none;
       }
@@ -112,7 +114,7 @@ export const Year = styled.div`
       font-size: 15px;
       text-align: center;
       width: 30%;
-      padding: 5px 7px;
+      padding: 6px 7px;
       margin: 0 5px;
       border-radius: 4px;
       border: 1px solid #bfbfbf;
@@ -200,8 +202,9 @@ export const Price = styled.div`
     > input {
       font-size: 15px;
       text-align: center;
+      color: #000;
       width: 30%;
-      padding: 5px 7px;
+      padding: 6px 7px;
       margin: 0 5px;
       border-radius: 4px;
       border: 1px solid #bfbfbf;

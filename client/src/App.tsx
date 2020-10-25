@@ -25,7 +25,7 @@ const App = () => {
             <Categories />
             <Cities />
           </Route>
-          <Route path="/dashboard">
+          <Route path="/rent">
             <Dashboard />
           </Route>
         </Switch>

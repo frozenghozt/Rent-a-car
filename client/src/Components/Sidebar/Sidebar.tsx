@@ -24,11 +24,6 @@ import {
 } from "./styles";
 import "./styles.css";
 
-const style = {
-  border: 0,
-  fontSize: "14px",
-};
-
 const Sidebar = () => {
   const dispatch = useDispatch();
   const selector = useSelector((state: RootStateOrAny) => state.search);
@@ -120,15 +115,14 @@ const Sidebar = () => {
         <h3>Date</h3>
         <div>
           <DatePicker
-            style={style}
             value={selector.date[0]}
             onChange={(date: MaterialUiPickersDate) =>
               dispatch(changeDeparture(date))
             }
             animateYearScrolling
           />
+          -
           <DatePicker
-            style={style}
             value={selector.date[1]}
             onChange={(date: MaterialUiPickersDate) =>
               dispatch(changeArrival(date))
@@ -238,7 +232,9 @@ const Sidebar = () => {
             min="1980"
             max="2019"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              dispatch(changeYears({ years: e.target.value, index: 0 }))
+              dispatch(
+                changeYears({ years: parseInt(e.target.value), index: 0 })
+              )
             }
             value={selector.years[0]}
           />
@@ -248,7 +244,9 @@ const Sidebar = () => {
             min="1981"
             max="2020"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              dispatch(changeYears({ years: e.target.value, index: 1 }))
+              dispatch(
+                changeYears({ years: parseInt(e.target.value), index: 1 })
+              )
             }
             value={selector.years[1]}
           />
@@ -339,7 +337,9 @@ const Sidebar = () => {
             max="1900"
             step="50"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              dispatch(changePrice({ price: e.target.value, index: 0 }))
+              dispatch(
+                changePrice({ price: parseInt(e.target.value), index: 0 })
+              )
             }
             value={selector.price[0]}
           />
@@ -350,7 +350,9 @@ const Sidebar = () => {
             max="2000"
             step="50"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              dispatch(changePrice({ price: e.target.value, index: 1 }))
+              dispatch(
+                changePrice({ price: parseInt(e.target.value), index: 1 })
+              )
             }
             value={selector.price[1]}
           />
