@@ -18,7 +18,7 @@ const Categories = () => {
       <Circlemed />
       <Circlelarge />
       <CenterHeadline>
-        <p>POWER OF OUR SERVICE</p>
+        <p>OUR SERVICE</p>
         <h3>
           Check out <br /> our marketplace
         </h3>
