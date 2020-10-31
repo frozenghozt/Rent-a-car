@@ -21,6 +21,9 @@ mongoose_1.default.connect(process.env.MONGODB_CONNECTION, {
     console.log("MongoDB connected.");
 });
 app.use("/", router_1.default);
+if (process.env.NODE_ENV === "production") {
+    app.use(express_1.default.static("client/build"));
+}
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
