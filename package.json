@@ -4,6 +4,10 @@
   "main": "dist/server.js",
   "author": "Diogo Silva",
   "license": "MIT",
+  "engines": {
+    "npm": "6.14.4",
+    "node": "12.17.0"
+  },
   "scripts": {
     "tsc": "tsc",
     "start": "node server.ts",
