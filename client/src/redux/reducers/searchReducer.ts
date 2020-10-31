@@ -35,7 +35,7 @@ const initialState: stateShape = {
   date: [new Date(), new Date()],
   doors: ["2", "3", "4", "5"],
   years: [1980, 2020],
-  fuel: ["Gasolina", "Gasoleo"],
+  fuel: ["Gasoline", "Diesel"],
 };
 
 export const search = (state = initialState, action: any) => {

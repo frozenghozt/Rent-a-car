@@ -305,26 +305,26 @@ const Sidebar = () => {
         <h3>Fuel</h3>
         <div>
           <button
-            onClick={() => dispatch(changeFuel("Gasolina"))}
+            onClick={() => dispatch(changeFuel("Gasoline"))}
             style={{
               border:
-                selector.fuel.indexOf("Gasolina") >= 0
+                selector.fuel.indexOf("Gasoline") >= 0
                   ? `1px solid #2f45bf`
                   : `1px solid #bfbfbf`,
             }}
           >
-            Gasolina
+            Gasoline
           </button>
           <button
-            onClick={() => dispatch(changeFuel("Gasoleo"))}
+            onClick={() => dispatch(changeFuel("Diesel"))}
             style={{
               border:
-                selector.fuel.indexOf("Gasoleo") >= 0
+                selector.fuel.indexOf("Diesel") >= 0
                   ? `1px solid #2f45bf`
                   : `1px solid #bfbfbf`,
             }}
           >
-            Gasoleo
+            Diesel
           </button>
         </div>
       </Fuel>
