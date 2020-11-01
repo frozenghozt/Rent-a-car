@@ -10,7 +10,7 @@
   },
   "scripts": {
     "tsc": "tsc",
-    "start": "node server.ts",
+    "start": "node ./dist/server.js",
     "server": "tsc && nodemon ./dist/server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
