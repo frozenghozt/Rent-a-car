@@ -20,36 +20,16 @@ const FullItem = () => {
       </Item>
       <Slicker>
         <SlickerScroll>
-          <SlickerItem>
-            <img />
-          </SlickerItem>
-          <SlickerItem>
-            <img />
-          </SlickerItem>
-          <SlickerItem>
-            <img />
-          </SlickerItem>
-          <SlickerItem>
-            <img />
-          </SlickerItem>
-          <SlickerItem>
-            <img />
-          </SlickerItem>
-          <SlickerItem>
-            <img />
-          </SlickerItem>
-          <SlickerItem>
-            <img />
-          </SlickerItem>
-          <SlickerItem>
-            <img />
-          </SlickerItem>
-          <SlickerItem>
-            <img />
-          </SlickerItem>
-          <SlickerItem>
-            <img />
-          </SlickerItem>
+          <SlickerItem></SlickerItem>
+          <SlickerItem></SlickerItem>
+          <SlickerItem></SlickerItem>
+          <SlickerItem></SlickerItem>
+          <SlickerItem></SlickerItem>
+          <SlickerItem></SlickerItem>
+          <SlickerItem></SlickerItem>
+          <SlickerItem></SlickerItem>
+          <SlickerItem></SlickerItem>
+          <SlickerItem></SlickerItem>
         </SlickerScroll>
       </Slicker>
     </Container>
